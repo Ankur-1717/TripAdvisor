@@ -6,7 +6,7 @@ const MapView = (props) => {
   
     // console.log("ankur ka data-> ", data[0].latitude);
       return (
-        <Map google={google} className={'map'} zoom={14}>
+        <Map google={google} style={{width: 800, height: 700, position: 'relative'}} className={'map'} zoom={2}>
           {data.map((item) =>(
               <Marker key={item.id} title={`Price: $${item.price}`} name={item.price} position={{lat: item.latitude, lng: item.longitude}} />
             ))

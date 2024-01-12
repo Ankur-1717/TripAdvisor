@@ -26,13 +26,13 @@ export default function Home() {
   return (
     <>
       <Navbar /> 
-      <div className="col-md-6 col-sm-12 col-xs-12">
-        <div className="container-fluid">
+      <div className="container app-container">
+        <div className="container map-container">
           {data.length > 0 && <MapView data = {data}/> }
         </div>
-        <div>
+        <div className="card-container">
           <Cards data = {data}/> 
-        </div>
+        </div>  
       </div>
     </>
   );

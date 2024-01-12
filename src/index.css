@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.map-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+.map-container {
+  flex: 1;
+}
+.card-container {
+  position: relative;
+  z-index: 2; 
+}
+
+.app-container {
+  display: flex;
+}
+
+
+
