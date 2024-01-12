@@ -9,7 +9,8 @@ export default function Home() {
   const [data, setdata] = useState([])
   const fetcher = async() =>{
         try {
-              const url = 'https://65841ac24d1ee97c6bcefd4e.mockapi.io/hotellistings?page=2&limit=10' ;
+              const apiUrl = process.env.REACT_APP_URL;
+              const url = apiUrl ;
               const response = await getAPIcalls(url) ;
               if(response.status === 200){
                     setdata(response.data) ;
@@ -21,27 +22,18 @@ export default function Home() {
   useEffect(() => {
         fetcher() ;
   }, [])
-  const containerStyle = {
-    position: 'absolute',  
-    width: '100%',
-    height: '70%'
-  }
+  
   return (
     <>
       <Navbar /> 
-      <div class="container">
-  <div class="row">
-    <div class="col">
-      <div style={containerStyle}>
-      {data.length > 0 && <MapView data = {data}/> }
+      <div className="col-md-6 col-sm-12 col-xs-12">
+        <div className="container-fluid">
+          {data.length > 0 && <MapView data = {data}/> }
+        </div>
+        <div>
+          <Cards data = {data}/> 
+        </div>
       </div>
-    </div>
-    <div class="col">
-      <Cards data = {data}/> 
-    </div>
-  </div>
-</div>
-      
     </>
   );
 }

@@ -10,7 +10,7 @@ export default function Card(props) {
   return (
     <div>
       <div className="card" style={{width: "18rem"}} onClick={handleOnclick}>
-        <img src={card.imageURL} className="card-img-top" alt="..." />
+        <img src={card.imageURL} className="img-fluid" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{card.name}</h5>
           <p className="card-text">

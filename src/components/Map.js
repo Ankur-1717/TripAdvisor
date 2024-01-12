@@ -15,5 +15,5 @@ const MapView = (props) => {
       )
   }
 export default GoogleApiWrapper({
-    apiKey: ("AIzaSyCpABvedJrCOv4crcKZdMUPTCqn2hHuM1s")
+    apiKey: (process.env.REACT_APP_MAP_API)
 })(MapView)
