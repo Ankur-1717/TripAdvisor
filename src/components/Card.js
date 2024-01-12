@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Card(props) {
   const card = props.item;
@@ -16,6 +16,10 @@ export default function Card(props) {
           <p className="card-text">
             {card.description}
           </p>
+          <p className="mt-2 fw-bold">${card.price}</p>
+          <button className="btn btn-outline-primary">
+            <Link className="text-decoration-none text-black" href={`/cardsDetails/:${card.id}`}>View More</Link>
+          </button>
         </div>
       </div>
     </div>
